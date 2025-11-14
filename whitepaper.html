@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFM Whitepaper v0.4.1 | Africans First Mesh</title>
+    <meta name="description" content="AFM Whitepaper - A cooperative, people-powered WiFi network for Africa">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="whitepaper-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body class="whitepaper-body">
+    <!-- Disclaimer Banner -->
+    <div class="disclaimer-banner">
+        <div class="container">
+            <p>⚠️ <strong>DRAFT v0.4.1:</strong> This whitepaper is subject to change. <a href="index.html">Back to home</a></p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav whitepaper-nav">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">🌍</span>
+                    <span class="logo-text">AFM</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#presale">Presale</a></li>
+                <li><a href="index.html#waitlist">Waitlist</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Whitepaper Content -->
+    <div class="whitepaper-container">
+        <!-- Sidebar TOC -->
+        <aside class="whitepaper-sidebar">
+            <div class="sidebar-sticky">
+                <h3>Table of Contents</h3>
+                <nav class="toc">
+                    <a href="#executive-summary" class="toc-link">1. Executive Summary</a>
+                    <a href="#vision-mission" class="toc-link">2. Vision & Mission</a>
+                    <a href="#glossary" class="toc-link">3. Glossary</a>
+                    <a href="#architecture" class="toc-link">4. Architecture</a>
+                    <a href="#tokenomics" class="toc-link">5. Tokenomics</a>
+                    <a href="#presale" class="toc-link">6. Presale Structure</a>
+                    <a href="#financing" class="toc-link">7. Operator Financing</a>
+                    <a href="#governance" class="toc-link">8. Governance</a>
+                    <a href="#technical" class="toc-link">9. Technical Implementation</a>
+                    <a href="#roadmap" class="toc-link">10. Roadmap</a>
+                    <a href="#economics" class="toc-link">11. Economics</a>
+                    <a href="#risks" class="toc-link">12. Risks</a>
+                    <a href="#team" class="toc-link">13. Team</a>
+                    <a href="#attribution" class="toc-link">14. Attribution</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="whitepaper-main">
+            <!-- Header -->
+            <header class="whitepaper-header">
+                <h1>AFM — Africans First Mesh</h1>
+                <h2 class="whitepaper-subtitle">Whitepaper v0.4.1</h2>
+                <div class="whitepaper-meta">
+                    <div class="meta-item">
+                        <strong>Website:</strong> <a href="http://www.afm.sh" target="_blank">www.afm.sh</a>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Ticker:</strong> AFM
+                    </div>
+                    <div class="meta-item">
+                        <strong>Chain:</strong> Algorand
+                    </div>
+                    <div class="meta-item">
+                        <strong>Tokens:</strong> AFM-ASA (governance), DC-ASA (utility)
+                    </div>
+                    <div class="meta-item">
+                        <strong>Date:</strong> January 2025
+                    </div>
+                    <div class="meta-item">
+                        <strong>Version:</strong> 0.4.1 (Draft)
+                    </div>
+                </div>
+                <p class="whitepaper-intro">
+                    A cooperative, people-powered WiFi network for Africa, built by communities and owned by node operators. AFM combines solar-powered satellite backhaul with open mesh WiFi and an Algorand-based burn-and-mint economy to make internet access abundant and affordable.
+                </p>
+            </header>
+
+            <!-- 1. Executive Summary -->
+            <section id="executive-summary" class="whitepaper-section">
+                <h2>1. Executive Summary</h2>
+
+                <p>AFM (Africans First Mesh) is a community-run wireless network that helps neighborhoods bootstrap reliable internet access using affordable, off-grid hardware kits and a token economy aligned to real usage. We adapt proven coverage incentive mechanisms from the DePIN space and re-implement them natively on <strong>Algorand</strong> using <strong>Algorand Standard Assets (ASAs)</strong>, oracles, and lightweight smart contracts.</p>
+
+                <h3>The Problem</h3>
+                <div class="stat-highlight">
+                    <div class="stat-big">2.9 Billion</div>
+                    <p>People globally lack internet access, with the majority in Africa</p>
+                </div>
+
+                <p>Traditional ISPs won't serve rural and peri-urban communities due to low population density and limited purchasing power. Existing solutions (satellite, mobile data) are either too expensive ($50-100/month) or unreliable.</p>
+
+                <h3>The Solution</h3>
+                <p>AFM creates a <strong>cooperative WiFi network</strong> where:</p>
+                <ul class="solution-list">
+                    <li><strong>Operators</strong> deploy solar-powered hotspots with satellite backhaul (Starlink Mini)</li>
+                    <li><strong>Users</strong> pay for data using stable-priced Data Credits (DC-ASA)</li>
+                    <li><strong>Community</strong> owns the network through democratic governance</li>
+                    <li><strong>Token economics</strong> reward coverage and usage, not speculation</li>
+                </ul>
+
+                <h3>Key Innovations</h3>
+                <div class="innovations-grid">
+                    <div class="innovation-card">
+                        <div class="innovation-icon">📊</div>
+                        <h4>Tiered Presale</h4>
+                        <p>Multi-tier, emission-based presale rewards early backers with vested DC</p>
+                    </div>
+                    <div class="innovation-card">
+                        <div class="innovation-icon">💰</div>
+                        <h4>Operator Financing</h4>
+                        <p>$0-$1,500 entry points via Revenue-Share model</p>
+                    </div>
+                    <div class="innovation-card">
+                        <div class="innovation-icon">🗳️</div>
+                        <h4>Hybrid Governance</h4>
+                        <p>Balances one-member-one-vote with token-weighted decisions</p>
+                    </div>
+                    <div class="innovation-card">
+                        <div class="innovation-icon">⚡</div>
+                        <h4>Algorand-Native</h4>
+                        <p>Fast, low-cost, sustainable blockchain infrastructure</p>
+                    </div>
+                    <div class="innovation-card">
+                        <div class="innovation-icon">☀️</div>
+                        <h4>Off-Grid First</h4>
+                        <p>Solar + satellite enables deployment anywhere</p>
+                    </div>
+                </div>
+
+                <h3>Target Metrics (3 Years)</h3>
+                <div class="metrics-chart-container">
+                    <canvas id="targetMetricsChart"></canvas>
+                </div>
+            </section>
+
+            <!-- 2. Vision & Mission -->
+            <section id="vision-mission" class="whitepaper-section">
+                <h2>2. Vision & Mission</h2>
+
+                <div class="vision-box">
+                    <h3>Vision</h3>
+                    <blockquote class="vision-quote">
+                        Internet access as a human right, owned by the communities it serves.
+                    </blockquote>
+                    <p>Every African community should have access to affordable, reliable internet—not as a service sold by distant corporations, but as a cooperative utility owned and operated by local people.</p>
+                </div>
+
+                <h3>Mission</h3>
+                <p>Build a <strong>people-powered WiFi network</strong> across Africa by:</p>
+                <ol class="mission-list">
+                    <li><strong>Empowering Operators</strong> - Enable anyone to become an internet service provider with minimal capital</li>
+                    <li><strong>Democratizing Access</strong> - Provide data at cost ($0.00001/DC) without profit extraction</li>
+                    <li><strong>Community Ownership</strong> - Governance by operators and users, not investors</li>
+                    <li><strong>Sustainable Economics</strong> - Rewards tied to coverage and usage, not speculation</li>
+                    <li><strong>Off-Grid Ready</strong> - Deploy anywhere with solar + satellite, no infrastructure required</li>
+                </ol>
+
+                <h3>Cooperative Principles</h3>
+                <p>AFM is built on the <strong>7 Cooperative Principles</strong> established over 150 years:</p>
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <div class="principle-number">1</div>
+                        <h4>Voluntary & Open Membership</h4>
+                        <p>Anyone can join</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-number">2</div>
+                        <h4>Democratic Member Control</h4>
+                        <p>One member = one vote</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-number">3</div>
+                        <h4>Member Economic Participation</h4>
+                        <p>Surplus returned to members</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-number">4</div>
+                        <h4>Autonomy & Independence</h4>
+                        <p>Self-governed, community-controlled</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-number">5</div>
+                        <h4>Education, Training, Information</h4>
+                        <p>Invest in operator capacity building</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-number">6</div>
+                        <h4>Cooperation Among Cooperatives</h4>
+                        <p>Partner with other cooperatives</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-number">7</div>
+                        <h4>Concern for Community</h4>
+                        <p>Sustainable development, environmental responsibility</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Presale Structure (MOST IMPORTANT SECTION WITH CHARTS) -->
+            <section id="presale" class="whitepaper-section highlight-section">
+                <h2>6. Presale Structure</h2>
+
+                <p>The AFM presale is designed to bootstrap the network with committed operators and users while rewarding early supporters for taking on risk before network launch.</p>
+
+                <h3>Time-Gated Stages</h3>
+                <p>The presale operates in <strong>3 sequential stages</strong> with decreasing rewards over time:</p>
+
+                <div class="presale-stages-visual">
+                    <div class="stage-visual early">
+                        <div class="stage-header">
+                            <span class="stage-badge">Stage 1</span>
+                            <h4>Early Bird</h4>
+                        </div>
+                        <div class="stage-bonus">50% Bonus</div>
+                        <div class="stage-period">24 Month Emission</div>
+                        <div class="stage-status coming-soon">Coming Soon</div>
+                    </div>
+                    <div class="stage-visual mid">
+                        <div class="stage-header">
+                            <span class="stage-badge">Stage 2</span>
+                            <h4>Mid Presale</h4>
+                        </div>
+                        <div class="stage-bonus">32% Bonus</div>
+                        <div class="stage-period">18 Month Emission</div>
+                        <div class="stage-status locked">March 2025 (Est.)</div>
+                    </div>
+                    <div class="stage-visual late">
+                        <div class="stage-header">
+                            <span class="stage-badge">Stage 3</span>
+                            <h4>Late Presale</h4>
+                        </div>
+                        <div class="stage-bonus">15% Bonus</div>
+                        <div class="stage-period">12 Month Emission</div>
+                        <div class="stage-status locked">May 2025 (Est.)</div>
+                    </div>
+                </div>
+
+                <h3>Presale Tiers</h3>
+                <p>Each stage offers 4 tiers of participation:</p>
+
+                <div class="tier-comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>Price</th>
+                                <th>Early Bird DC</th>
+                                <th>Mid DC</th>
+                                <th>Late DC</th>
+                                <th>Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Starter</strong></td>
+                                <td>$10</td>
+                                <td>$15 (one-time)</td>
+                                <td>$13.20 (one-time)</td>
+                                <td>$11.50 (one-time)</td>
+                                <td>Network trial, ~1 month usage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Light</strong></td>
+                                <td>$100</td>
+                                <td>$150</td>
+                                <td>$132</td>
+                                <td>$115</td>
+                                <td>5 GB/month, mobile-first</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Medium</strong></td>
+                                <td>$200</td>
+                                <td>$300</td>
+                                <td>$264</td>
+                                <td>$230</td>
+                                <td>10 GB/month, household internet</td>
+                            </tr>
+                            <tr class="featured-row">
+                                <td><strong>Heavy+</strong></td>
+                                <td>$600</td>
+                                <td>$900 + $135 bonus</td>
+                                <td>$792</td>
+                                <td>$690</td>
+                                <td>30 GB/month, operator pathway, FREE financing*</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="table-note">*FREE operator financing limited to first 30 Heavy+ Early Bird participants</p>
+                </div>
+
+                <h3>Presale Token Emission Schedule</h3>
+                <div class="chart-container">
+                    <canvas id="emissionScheduleChart"></canvas>
+                </div>
+
+                <h3>Why Time-Gated Rewards?</h3>
+                <div class="info-box">
+                    <p><strong>Fair Risk/Reward Alignment:</strong> Early supporters take on more risk before the network launches. As the network proves itself and grows, this risk decreases—so rewards decrease proportionally.</p>
+                    <p><strong>No Artificial Scarcity:</strong> Everyone who joins during a stage gets the same reward. No "first 100 only" gimmicks.</p>
+                    <p><strong>Transparent Timeline:</strong> Stage transitions are announced in advance based on network readiness and waitlist growth.</p>
+                </div>
+
+                <h3>Soulbound Data Credits</h3>
+                <p>All presale DC are <strong>soulbound (non-transferable)</strong>:</p>
+                <ul>
+                    <li>✓ Prevents speculation and market manipulation</li>
+                    <li>✓ Ensures DC are used for network access, not trading</li>
+                    <li>✓ Aligns with cooperative values (utility over profit)</li>
+                    <li>✓ Follows Helium's proven burn-and-mint model</li>
+                </ul>
+                <p class="warning-text">⚠️ DC can ONLY be used on the AFM network. They have NO value outside the network.</p>
+            </section>
+
+            <!-- 7. Operator Financing -->
+            <section id="financing" class="whitepaper-section">
+                <h2>7. Operator Financing</h2>
+
+                <p>AFM makes it possible for anyone to become an internet service provider with minimal upfront capital through our <strong>Revenue-Share Financing</strong> model.</p>
+
+                <h3>Equipment Tiers</h3>
+                <div class="equipment-tiers">
+                    <div class="equipment-tier">
+                        <h4>Tier 1: Mini Hotspot</h4>
+                        <p><strong>Cost:</strong> ~$800</p>
+                        <ul>
+                            <li>Starlink Mini</li>
+                            <li>Single WiFi AP</li>
+                            <li>Small solar setup</li>
+                            <li>Serves 10-20 users</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-tier featured">
+                        <h4>Tier 2: Standard Hotspot</h4>
+                        <p><strong>Cost:</strong> ~$1,500</p>
+                        <ul>
+                            <li>Starlink Standard</li>
+                            <li>2-3 WiFi APs</li>
+                            <li>Medium solar setup</li>
+                            <li>Serves 30-50 users</li>
+                        </ul>
+                    </div>
+                    <div class="equipment-tier">
+                        <h4>Tier 3: Community Hub</h4>
+                        <p><strong>Cost:</strong> ~$3,000</p>
+                        <ul>
+                            <li>Starlink Business</li>
+                            <li>5+ WiFi APs</li>
+                            <li>Large solar array</li>
+                            <li>Serves 100+ users</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Operator Economics (Month 1-12)</h3>
+                <div class="chart-container">
+                    <canvas id="operatorEconomicsChart"></canvas>
+                </div>
+
+                <div class="economics-breakdown">
+                    <h4>Revenue Share Model</h4>
+                    <table class="economics-table">
+                        <tr>
+                            <td>AFM Network Rewards</td>
+                            <td class="amount">$200/month</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Your Share (40%)</td>
+                            <td class="amount">$80/month</td>
+                        </tr>
+                        <tr>
+                            <td>Operating Costs (internet, power, maintenance)</td>
+                            <td class="amount negative">-$65/month</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Net Profit (Month 1-12)</strong></td>
+                            <td class="amount positive"><strong>+$15/month</strong></td>
+                        </tr>
+                    </table>
+                    <div class="economics-notes">
+                        <p>✓ Positive cash flow from day 1</p>
+                        <p>✓ Equipment paid off in 12.5 months</p>
+                        <p>✓ After payback: $135/month profit (month 13+)</p>
+                        <p>✓ 24-month ROI: 1,000% ($250 → $3,000 net worth)</p>
+                    </div>
+                </div>
+
+                <h3>FREE Financing for Heavy+ Early Bird</h3>
+                <div class="info-box success">
+                    <p><strong>Limited Offer:</strong> The first 30 Heavy+ Early Bird presale participants who commit to operating a node receive <strong>$0 down payment</strong> for Tier 1 equipment (~$800 value).</p>
+                    <p><strong>How it works:</strong></p>
+                    <ol>
+                        <li>Purchase Heavy+ tier ($600)</li>
+                        <li>Commit to deploying node within 12 months</li>
+                        <li>Receive equipment with $0 upfront cost</li>
+                        <li>Repay via 60/40 revenue share</li>
+                        <li>Equipment fully yours after ~13 months</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- 8. Governance -->
+            <section id="governance" class="whitepaper-section">
+                <h2>8. Governance</h2>
+
+                <p>AFM uses a <strong>hybrid governance model</strong> that balances cooperative principles (one-member-one-vote) with token-weighted decisions for treasury management.</p>
+
+                <h3>Governance Structure</h3>
+                <div class="governance-diagram">
+                    <div class="governance-layer">
+                        <h4>Layer 1: Operational Governance</h4>
+                        <p><strong>Voting:</strong> One Member = One Vote</p>
+                        <p><strong>Decisions:</strong> Network operations, operator policies, coverage expansion, service quality standards</p>
+                        <p><strong>Who Votes:</strong> All cooperative members (operators + committed users)</p>
+                    </div>
+                    <div class="governance-layer">
+                        <h4>Layer 2: Treasury Governance</h4>
+                        <p><strong>Voting:</strong> Token-weighted (AFM holdings)</p>
+                        <p><strong>Decisions:</strong> Treasury allocations, AFM emissions, economic parameters, presale terms</p>
+                        <p><strong>Who Votes:</strong> AFM token holders</p>
+                    </div>
+                    <div class="governance-layer">
+                        <h4>Layer 3: Emergency Actions</h4>
+                        <p><strong>Voting:</strong> Multisig (Board of Directors)</p>
+                        <p><strong>Decisions:</strong> Security incidents, smart contract upgrades, regulatory compliance</p>
+                        <p><strong>Who Votes:</strong> 5-member elected board (2-year terms)</p>
+                    </div>
+                </div>
+
+                <h3>Governance Roadmap</h3>
+                <div class="chart-container">
+                    <canvas id="governanceRoadmapChart"></canvas>
+                </div>
+
+                <div class="governance-phases">
+                    <div class="phase">
+                        <h4>Phase 1: Foundation (Months 0-6)</h4>
+                        <ul>
+                            <li>Core team manages operations</li>
+                            <li>Community feedback via Discord/Telegram</li>
+                            <li>Operator onboarding and training</li>
+                        </ul>
+                    </div>
+                    <div class="phase">
+                        <h4>Phase 2: Progressive Decentralization (Months 6-18)</h4>
+                        <ul>
+                            <li>Operator council formed (advisory)</li>
+                            <li>Community votes on minor decisions</li>
+                            <li>Treasury multisig established</li>
+                        </ul>
+                    </div>
+                    <div class="phase">
+                        <h4>Phase 3: Full Cooperative (Month 18+)</h4>
+                        <ul>
+                            <li>Formal cooperative incorporation</li>
+                            <li>Elected board of directors</li>
+                            <li>Full on-chain governance</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Roadmap -->
+            <section id="roadmap" class="whitepaper-section">
+                <h2>10. Roadmap</h2>
+
+                <div class="roadmap-timeline">
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">Q1 2025</div>
+                        <div class="roadmap-content">
+                            <h4>Presale & Pilot</h4>
+                            <ul>
+                                <li>Launch waitlist (complete)</li>
+                                <li>Run Early Bird presale</li>
+                                <li>Deploy 3 pilot nodes (Nigeria)</li>
+                                <li>Test network economics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">Q2 2025</div>
+                        <div class="roadmap-content">
+                            <h4>Network Launch</h4>
+                            <ul>
+                                <li>Mid Presale stage opens</li>
+                                <li>Deploy 20 operator nodes</li>
+                                <li>Launch DC-ASA on Algorand</li>
+                                <li>Open network to public</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">Q3 2025</div>
+                        <div class="roadmap-content">
+                            <h4>Expansion</h4>
+                            <ul>
+                                <li>Late Presale stage</li>
+                                <li>50+ active operators</li>
+                                <li>Expand to Kenya & Ghana</li>
+                                <li>Form operator council</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">Q4 2025</div>
+                        <div class="roadmap-content">
+                            <h4>Sustainability</h4>
+                            <ul>
+                                <li>100+ operators across 3 countries</li>
+                                <li>Launch AFM-ASA governance token</li>
+                                <li>Begin progressive decentralization</li>
+                                <li>Achieve burn-mint equilibrium</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">2026</div>
+                        <div class="roadmap-content">
+                            <h4>Scale & Governance</h4>
+                            <ul>
+                                <li>200+ operators across 5 countries</li>
+                                <li>Elect board of directors</li>
+                                <li>Full cooperative governance</li>
+                                <li>10,000+ active users</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">2027</div>
+                        <div class="roadmap-content">
+                            <h4>Maturity</h4>
+                            <ul>
+                                <li>350+ operators across 10 countries</li>
+                                <li>100,000+ people connected</li>
+                                <li>Self-sustaining economics</li>
+                                <li>Community-owned utility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Risks & Mitigations -->
+            <section id="risks" class="whitepaper-section">
+                <h2>12. Risks & Mitigations</h2>
+
+                <div class="risks-grid">
+                    <div class="risk-card">
+                        <h4>⚠️ Regulatory Risk</h4>
+                        <p><strong>Risk:</strong> Crypto regulations may change, affecting token operations</p>
+                        <p><strong>Mitigation:</strong> DC are utility tokens (not securities), legal counsel in each jurisdiction, compliance-first approach</p>
+                    </div>
+                    <div class="risk-card">
+                        <h4>⚠️ Technical Risk</h4>
+                        <p><strong>Risk:</strong> Smart contract bugs, blockchain failures</p>
+                        <p><strong>Mitigation:</strong> Audited smart contracts, gradual rollout, emergency pause mechanisms</p>
+                    </div>
+                    <div class="risk-card">
+                        <h4>⚠️ Adoption Risk</h4>
+                        <p><strong>Risk:</strong> Not enough operators or users join</p>
+                        <p><strong>Mitigation:</strong> Generous presale rewards, $0 operator financing, partnerships with local cooperatives</p>
+                    </div>
+                    <div class="risk-card">
+                        <h4>⚠️ Economic Risk</h4>
+                        <p><strong>Risk:</strong> Token price volatility, burn-mint imbalance</p>
+                        <p><strong>Mitigation:</strong> Soulbound DC, stable pricing, treasury reserves, community governance</p>
+                    </div>
+                    <div class="risk-card">
+                        <h4>⚠️ Infrastructure Risk</h4>
+                        <p><strong>Risk:</strong> Starlink service disruptions, solar equipment failures</p>
+                        <p><strong>Mitigation:</strong> Diversified backhaul options, operator training, equipment insurance fund</p>
+                    </div>
+                    <div class="risk-card">
+                        <h4>⚠️ Competition Risk</h4>
+                        <p><strong>Risk:</strong> Traditional ISPs or other DePIN networks compete</p>
+                        <p><strong>Mitigation:</strong> Cooperative advantages (no profit extraction), community ownership, off-grid capability</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 13. Team -->
+            <section id="team" class="whitepaper-section">
+                <h2>13. Team</h2>
+
+                <div class="team-section">
+                    <div class="team-member">
+                        <div class="member-avatar">👨‍💻</div>
+                        <h4>Andrew</h4>
+                        <p class="member-role">Co-Founder, Technical Lead</p>
+                        <p class="member-bio">Smart contract architecture and tokenomics design. Building the technical foundation for community-owned infrastructure.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">🌍</div>
+                        <h4>Ifeanyi</h4>
+                        <p class="member-role">Co-Founder, Nigeria Operations Lead</p>
+                        <p class="member-bio">Boots on the ground in Nigeria. Building operator community, navigating regulations, and driving local partnerships.</p>
+                    </div>
+                </div>
+
+                <div class="advisors-note">
+                    <p><strong>Building the Team:</strong> We're actively recruiting for governance, community management, and regional expansion roles. Join the <a href="index.html#waitlist">waitlist</a> to stay updated on opportunities.</p>
+                </div>
+            </section>
+
+            <!-- 14. Attribution -->
+            <section id="attribution" class="whitepaper-section">
+                <h2>14. Attribution & Prior Art</h2>
+
+                <p>AFM builds on the shoulders of giants in the DePIN and cooperative movements:</p>
+
+                <div class="attribution-list">
+                    <div class="attribution-item">
+                        <h4>Helium Network</h4>
+                        <p>Pioneered the burn-and-mint tokenomics and coverage rewards model that we adapt for WiFi in Africa</p>
+                    </div>
+                    <div class="attribution-item">
+                        <h4>Althea Network</h4>
+                        <p>Demonstrated community mesh networks with micropayment routing</p>
+                    </div>
+                    <div class="attribution-item">
+                        <h4>Cooperative Movement</h4>
+                        <p>150+ years of cooperative principles guiding our governance and economic structure</p>
+                    </div>
+                    <div class="attribution-item">
+                        <h4>Algorand Foundation</h4>
+                        <p>Fast, low-cost, carbon-negative blockchain enabling our technical implementation</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="whitepaper-cta">
+                <h2>Join the Movement</h2>
+                <p>Be part of building Africa's first community-owned WiFi network</p>
+                <div class="cta-buttons">
+                    <a href="index.html#waitlist" class="btn btn-primary btn-large">Join the Waitlist</a>
+                    <a href="index.html#presale" class="btn btn-secondary btn-large">View Presale Tiers</a>
+                </div>
+                <p class="cta-note">Questions? Contact us at <a href="mailto:hello@afm.sh">hello@afm.sh</a></p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Charts JavaScript -->
+    <script src="whitepaper-charts.js"></script>
+</body>
+</html>

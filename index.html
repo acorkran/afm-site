@@ -11,6 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Disclaimer Banner -->
+    <div class="disclaimer-banner">
+        <div class="container">
+            <p>⚠️ <strong>WAITLIST PHASE:</strong> Presale details subject to change. Review <a href="AFM-Whitepaper-v0.4.1.md" target="_blank">whitepaper v0.4.1</a> and <a href="terms-and-conditions.md" target="_blank">draft terms</a> before committing.</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="container nav-container">
@@ -22,7 +29,7 @@
                 <li><a href="#presale">Presale</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#operators">Become an Operator</a></li>
-                <li><a href="#whitepaper">Whitepaper</a></li>
+                <li><a href="whitepaper.html">Whitepaper</a></li>
                 <li><a href="#waitlist" class="btn btn-primary-small">Join Waitlist</a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -110,48 +117,46 @@
     <section id="presale" class="presale-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Early Bird Presale <span class="highlight">Limited Spots</span></h2>
+                <h2 class="section-title">Presale Tiers <span class="highlight">Time-Gated Rewards</span></h2>
                 <p class="section-subtitle">
-                    Get rewarded for believing in community-owned connectivity. Early supporters receive bonus Data Credits emitted over 24 months.
+                    Rewards decrease over time as the network grows. Early supporters earn higher bonuses for taking on early risk.
                 </p>
             </div>
 
-            <!-- Stage Selector -->
-            <div class="stage-tabs">
-                <button class="stage-tab active" data-stage="early">
-                    <span class="stage-badge">50% Bonus</span>
-                    <span class="stage-name">Early Bird</span>
-                    <span class="stage-detail">24 months</span>
-                </button>
-                <button class="stage-tab" data-stage="mid">
-                    <span class="stage-badge">32% Bonus</span>
-                    <span class="stage-name">Mid Presale</span>
-                    <span class="stage-detail">18 months</span>
-                </button>
-                <button class="stage-tab" data-stage="late">
-                    <span class="stage-badge">15% Bonus</span>
-                    <span class="stage-name">Late Presale</span>
-                    <span class="stage-detail">12 months</span>
-                </button>
+            <!-- Presale Preview Banner -->
+            <div class="current-stage-banner">
+                <div class="stage-info">
+                    <div class="stage-status">
+                        <span class="status-badge">COMING SOON</span>
+                        <span class="stage-name">Early Bird Stage Preview</span>
+                    </div>
+                    <div class="stage-bonus">50% Bonus • 24 Month Emission</div>
+                </div>
+                <div class="stage-timeline">
+                    <p><strong>Join the waitlist below to be notified when presale opens</strong></p>
+                    <p class="timeline-note">Stage 2: Mid Presale (32% bonus) • Stage 3: Late Presale (15% bonus)</p>
+                    <p class="timeline-note">Rewards decrease over time - early supporters earn more</p>
+                </div>
             </div>
 
             <!-- Tier Cards -->
             <div class="tiers-grid" id="tiers-container">
                 <!-- Early Bird Tiers (default) -->
                 <div class="tier-card" data-tier="starter">
+                    <div class="tier-badge network-trial">Quick Entry</div>
                     <div class="tier-header">
                         <h3 class="tier-name">Starter</h3>
                         <div class="tier-price">$10</div>
                     </div>
                     <div class="tier-reward">
                         <div class="reward-value">$15</div>
-                        <div class="reward-label">in Data Credits</div>
+                        <div class="reward-label">in Data Credits (one-time)</div>
                     </div>
                     <ul class="tier-features">
-                        <li>✓ 24 month emission</li>
-                        <li>✓ 0.5 GB/month cap</li>
+                        <li>✓ One-time credit (no emission)</li>
+                        <li>✓ ~1 month light/medium usage</li>
                         <li>✓ Soulbound (non-transferable)</li>
-                        <li>✓ Support the mission</li>
+                        <li>✓ Try the network</li>
                     </ul>
                 </div>
 
@@ -167,7 +172,7 @@
                     <ul class="tier-features">
                         <li>✓ 24 month emission</li>
                         <li>✓ 5 GB/month cap</li>
-                        <li>✓ Soulbound rewards</li>
+                        <li>✓ Mobile-first usage</li>
                         <li>✓ Community access</li>
                     </ul>
                 </div>
@@ -184,8 +189,8 @@
                     <ul class="tier-features">
                         <li>✓ 24 month emission</li>
                         <li>✓ 10 GB/month cap</li>
+                        <li>✓ Household internet</li>
                         <li>✓ Operator bonus eligible</li>
-                        <li>✓ Priority support</li>
                     </ul>
                 </div>
 
@@ -202,19 +207,20 @@
                     <ul class="tier-features">
                         <li>✓ 24 month emission</li>
                         <li>✓ 30 GB/month cap</li>
-                        <li>✓ <strong>FREE operator financing</strong></li>
+                        <li>✓ <strong>FREE operator financing*</strong></li>
                         <li>✓ 15% operator bonus ($135)</li>
-                        <li>✓ Limited to 30 spots</li>
+                        <li>✓ Operator pathway</li>
                     </ul>
+                    <p class="tier-note">*Limited to first 30 Early Bird operators</p>
                 </div>
             </div>
 
             <div class="presale-cta">
                 <a href="#waitlist" class="btn btn-primary btn-large">
-                    Secure Your Spot on the Waitlist
+                    Join the Waitlist
                 </a>
                 <p class="presale-note">
-                    🔒 No payment required now. Waitlist members get first access when presale opens.
+                    🔒 No payment required now. Review full <a href="AFM-Whitepaper-v0.4.1.md" target="_blank">whitepaper</a> and <a href="terms-and-conditions.md" target="_blank">terms & conditions</a> before committing.
                 </p>
             </div>
         </div>
@@ -462,9 +468,14 @@
                 <p class="whitepaper-text">
                     Dive deep into our tokenomics, governance roadmap, technical architecture, and 3-year plan to deploy 500+ hotspots across 10 African countries.
                 </p>
-                <a href="AFM-Whitepaper-v0.4.1.md" class="btn btn-primary" download>
-                    Download Whitepaper (v0.4.1)
-                </a>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="whitepaper.html" class="btn btn-primary">
+                        Read Whitepaper Online
+                    </a>
+                    <a href="AFM-Whitepaper-v0.4.1.md" class="btn btn-secondary" download>
+                        Download Markdown
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -486,6 +497,9 @@
                         <input type="email" id="email" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
+                        <input type="text" id="telegram" name="telegram" placeholder="Telegram Username (optional - for instant updates)">
+                    </div>
+                    <div class="form-group">
                         <select id="interest" name="interest" required>
                             <option value="">I'm interested in...</option>
                             <option value="presale">Joining the presale</option>
@@ -504,13 +518,28 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="country" name="country" placeholder="Country (optional)">
+                        <input type="text" id="country" name="country" placeholder="Country (optional)" list="countries">
+                        <datalist id="countries">
+                            <option value="Nigeria">
+                            <option value="Kenya">
+                            <option value="Ghana">
+                            <option value="South Africa">
+                            <option value="Ethiopia">
+                            <option value="Tanzania">
+                            <option value="Uganda">
+                            <option value="Algeria">
+                            <option value="Morocco">
+                            <option value="Egypt">
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="region" name="region" placeholder="City/Region (optional - helps us find test sites)">
                     </div>
                     <button type="submit" class="btn btn-primary btn-large btn-full">
                         Join the Waitlist
                     </button>
                     <p class="form-note">
-                        🔒 We respect your privacy. No spam, just presale updates.
+                        🔒 We respect your privacy. No spam, just presale updates via email & Telegram.
                     </p>
                 </form>
 

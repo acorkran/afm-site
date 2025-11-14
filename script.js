@@ -50,48 +50,8 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Stage tab switching
-const stageTabs = document.querySelectorAll('.stage-tab');
-const tierCards = document.querySelectorAll('.tier-card');
-
-stageTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove active class from all tabs
-        stageTabs.forEach(t => t.classList.remove('active'));
-
-        // Add active class to clicked tab
-        tab.classList.add('active');
-
-        // Get selected stage
-        const stage = tab.dataset.stage;
-
-        // Update tier cards with new data
-        updateTierCards(stage);
-    });
-});
-
-function updateTierCards(stage) {
-    const data = tierData[stage];
-
-    tierCards.forEach(card => {
-        const tier = card.dataset.tier;
-        if (data[tier]) {
-            const tierInfo = data[tier];
-
-            // Update reward value
-            const rewardValue = card.querySelector('.reward-value');
-            if (rewardValue) {
-                rewardValue.textContent = tierInfo.reward;
-            }
-
-            // Update features list period
-            const features = card.querySelectorAll('.tier-features li');
-            if (features[0]) {
-                features[0].textContent = `✓ ${tierInfo.period} emission`;
-            }
-        }
-    });
-}
+// Note: Stage tabs removed - presale is time-gated, not user-selected
+// Current stage is shown in the banner and updates automatically based on date
 
 // Mobile menu toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -115,9 +75,11 @@ waitlistForm.addEventListener('submit', async (e) => {
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
+        telegram: document.getElementById('telegram').value,
         interest: document.getElementById('interest').value,
         tier: document.getElementById('tier').value,
         country: document.getElementById('country').value,
+        region: document.getElementById('region').value,
         timestamp: new Date().toISOString()
     };
 

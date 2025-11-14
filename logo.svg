@@ -1,0 +1,450 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="600" height="700">
+  <defs>
+    <!-- Satellite-view gradient matching natural African terrain colors -->
+    <linearGradient id="africaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />      <!-- Sahara sandy/golden -->
+      <stop offset="22%" style="stop-color:#C89858;stop-opacity:1" />     <!-- Sahel transition -->
+      <stop offset="38%" style="stop-color:#8B7355;stop-opacity:1" />     <!-- Dry savanna -->
+      <stop offset="45%" style="stop-color:#3D6B1F;stop-opacity:1" />     <!-- Equatorial green -->
+      <stop offset="60%" style="stop-color:#2D5016;stop-opacity:1" />     <!-- Deep rainforest green -->
+      <stop offset="70%" style="stop-color:#4A7C2F;stop-opacity:1" />     <!-- Southern green -->
+      <stop offset="82%" style="stop-color:#8B944E;stop-opacity:1" />     <!-- Grassland -->
+      <stop offset="100%" style="stop-color:#C4A35A;stop-opacity:1" />    <!-- Southern tan/yellow -->
+    </linearGradient>
+
+    <!-- Glow effect for network nodes -->
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Strong glow for major network hubs -->
+    <filter id="strongGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Recognizable Africa Continent Silhouette (simplified for clarity) -->
+  <path id="africa" fill="url(#africaGradient)" stroke="#8B7355" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"
+    d="M 280,45
+       L 360,45
+       L 410,55
+       L 455,75
+       C 470,85 480,95 485,110
+       L 490,140
+       C 490,160 485,175 475,185
+       L 450,205
+       C 440,215 430,225 425,240
+       L 420,270
+       C 420,285 425,295 435,300
+       L 465,310
+       C 475,315 480,325 480,340
+       L 478,370
+       C 475,385 468,395 458,400
+       L 430,410
+       C 415,415 405,425 400,440
+       L 395,470
+       C 395,485 400,500 410,510
+       L 435,525
+       C 445,532 450,542 450,555
+       L 448,585
+       C 445,600 438,610 428,615
+       L 395,625
+       C 380,628 370,635 365,648
+       L 360,675
+       L 340,690
+       L 310,698
+       L 275,698
+       L 245,690
+       L 220,675
+       C 210,665 205,650 205,632
+       L 207,605
+       C 210,590 220,580 235,575
+       L 268,568
+       C 283,565 293,558 298,545
+       L 303,515
+       C 303,500 298,488 288,480
+       L 260,465
+       C 245,458 238,445 238,428
+       L 240,398
+       C 243,383 253,373 268,368
+       L 300,360
+       C 315,357 325,348 330,333
+       L 335,303
+       C 335,288 330,278 320,273
+       L 290,263
+       C 275,258 268,248 268,233
+       L 270,203
+       C 273,188 283,178 298,173
+       L 330,165
+       C 345,162 355,153 360,138
+       L 365,108
+       C 365,93 360,83 350,78
+       L 320,68
+       C 305,63 298,53 298,38
+       L 300,25
+       L 305,15
+       L 315,8
+       L 330,5
+       L 350,5
+       L 370,8
+       L 385,15
+       L 395,25
+       L 400,40
+       C 400,55 405,65 415,70
+       L 445,80
+       C 460,85 470,93 475,105
+       L 480,135
+       C 480,150 475,160 465,165
+       L 435,175
+       C 420,178 410,186 405,200
+       L 400,230
+       C 400,245 405,255 415,260
+       L 445,270
+       C 460,275 470,285 475,300
+       L 480,330
+       C 480,345 475,357 465,365
+       L 435,378
+       C 420,383 410,393 405,408
+       L 400,438
+       C 400,453 405,465 415,473
+       L 445,488
+       C 460,495 470,507 475,523
+       L 478,553
+       C 478,568 473,580 463,588
+       L 433,603
+       C 418,610 408,622 403,638
+       L 398,668
+       L 390,685
+       L 375,695
+       L 355,700
+       L 330,700
+       L 305,695
+       L 285,685
+       L 270,670
+       C 260,658 255,643 255,625
+       L 257,595
+       C 260,580 270,570 285,565
+       L 318,558
+       C 333,555 343,546 348,531
+       L 353,501
+       C 353,486 348,476 338,471
+       L 310,461
+       C 295,456 288,444 288,426
+       L 290,396
+       C 293,381 303,371 318,366
+       L 350,358
+       C 365,355 375,346 380,331
+       L 385,301
+       C 385,286 380,276 370,271
+       L 340,261
+       C 325,256 318,244 318,226
+       L 320,196
+       C 323,181 333,171 348,166
+       L 380,158
+       C 395,155 405,146 410,131
+       L 415,101
+       C 415,86 410,76 400,71
+       L 370,61
+       C 355,56 348,46 348,31
+       L 350,18
+       L 355,10
+       L 365,5
+       L 380,2
+       L 400,2
+       L 420,5
+       L 435,12
+       L 445,22
+       L 450,37
+       C 450,52 455,62 465,67
+       L 495,77
+       C 510,82 520,92 525,107
+       L 528,137
+       C 528,152 523,164 513,172
+       L 483,187
+       C 468,194 458,206 453,223
+       L 448,253
+       C 448,268 453,280 463,288
+       L 493,303
+       C 508,310 518,322 523,339
+       L 526,369
+       C 526,384 521,396 511,404
+       L 481,419
+       C 466,426 456,438 451,455
+       L 446,485
+       C 446,500 451,512 461,520
+       L 491,535
+       C 506,542 516,554 521,571
+       L 524,601
+       C 524,616 519,628 509,636
+       L 479,651
+       C 464,658 454,670 449,687
+       L 444,717
+       L 436,734
+       L 421,744
+       L 401,749
+       L 376,749
+       L 351,744
+       L 331,734
+       L 316,719
+       C 306,707 301,692 301,674
+       L 303,644
+       C 306,629 316,619 331,614
+       L 364,607
+       C 379,604 389,595 394,580
+       L 399,550
+       C 399,535 394,525 384,520
+       L 356,510
+       C 341,505 334,493 334,475
+       L 336,445
+       C 339,430 349,420 364,415
+       L 396,407
+       C 411,404 421,395 426,380
+       L 431,350
+       C 431,335 426,325 416,320
+       L 386,310
+       C 371,305 364,293 364,275
+       L 366,245
+       C 369,230 379,220 394,215
+       L 426,207
+       C 441,204 451,195 456,180
+       L 461,150
+       C 461,135 456,125 446,120
+       L 416,110
+       C 401,105 394,93 394,75
+       L 396,62
+       L 401,54
+       L 411,49
+       L 426,46
+       L 446,46
+       L 466,49
+       L 481,56
+       L 491,66
+       L 496,81
+       C 496,96 501,106 511,111
+       L 541,121
+       C 556,126 566,136 571,151
+       L 574,181
+       C 574,196 569,208 559,216
+       L 529,231
+       C 514,238 504,250 499,267
+       L 494,297
+       C 494,312 499,324 509,332
+       L 539,347
+       C 554,354 564,366 569,383
+       L 572,413
+       C 572,428 567,440 557,448
+       L 527,463
+       C 512,470 502,482 497,499
+       L 492,529
+       C 492,544 497,556 507,564
+       L 537,579
+       C 552,586 562,598 567,615
+       L 570,645
+       C 570,660 565,672 555,680
+       L 525,695
+       C 510,702 500,714 495,731
+       L 490,761
+       L 482,778
+       L 467,788
+       L 447,793
+       L 422,793
+       L 397,788
+       L 377,778
+       L 362,763
+       C 352,751 347,736 347,718
+       L 349,688
+       C 352,673 362,663 377,658
+       L 410,651
+       C 425,648 435,639 440,624
+       L 445,594
+       C 445,579 440,569 430,564
+       L 402,554
+       C 387,549 380,537 380,519
+       L 382,489
+       C 385,474 395,464 410,459
+       L 442,451
+       C 457,448 467,439 472,424
+       L 477,394
+       C 477,379 472,369 462,364
+       L 432,354
+       C 417,349 410,337 410,319
+       L 412,289
+       C 415,274 425,264 440,259
+       L 472,251
+       C 487,248 497,239 502,224
+       L 507,194
+       C 507,179 502,169 492,164
+       L 462,154
+       C 447,149 440,137 440,119
+       L 442,106
+       L 447,98
+       L 457,93
+       L 472,90
+       L 492,90
+       L 512,93
+       L 527,100
+       L 537,110
+       L 542,125
+       C 542,140 547,150 557,155
+       L 587,165
+       C 602,170 612,180 617,195
+       L 620,225
+       C 620,240 615,252 605,260
+       L 575,275
+       C 560,282 550,294 545,311
+       L 540,341
+       C 540,356 545,368 555,376
+       L 585,391
+       C 600,398 610,410 615,427
+       L 618,457
+       C 618,472 613,484 603,492
+       L 573,507
+       C 558,514 548,526 543,543
+       L 538,573
+       C 538,588 543,600 553,608
+       L 583,623
+       C 598,630 608,642 613,659
+       L 616,689
+       C 616,704 611,716 601,724
+       L 571,739
+       C 556,746 546,758 541,775
+       L 536,805
+       L 528,822
+       L 513,832
+       L 493,837
+       L 468,837
+       L 443,832
+       L 423,822
+       L 408,807
+       C 398,795 393,780 393,762
+       L 395,732
+       C 398,717 408,707 423,702
+       L 456,695
+       C 471,692 481,683 486,668
+       L 491,638
+       C 491,623 486,613 476,608
+       L 448,598
+       C 433,593 426,581 426,563
+       L 428,533
+       C 431,518 441,508 456,503
+       L 488,495
+       C 503,492 513,483 518,468
+       L 523,438
+       C 523,423 518,413 508,408
+       L 478,398
+       C 463,393 456,381 456,363
+       L 458,333
+       C 461,318 471,308 486,303
+       L 518,295
+       C 533,292 543,283 548,268
+       L 553,238
+       C 553,223 548,213 538,208
+       L 508,198
+       C 493,193 486,181 486,163
+       L 488,150
+       L 493,142
+       L 503,137
+       L 518,134
+       L 538,134
+       L 558,137
+       L 573,144
+       L 583,154
+       L 588,169
+       C 588,184 593,194 603,199
+       Z
+
+       M 95,105
+       L 115,100
+       L 135,100
+       L 155,105
+       L 172,115
+       L 185,130
+       C 192,143 195,158 193,175
+       C 191,192 184,206 172,217
+       L 150,232
+       C 137,239 122,242 105,240
+       C 88,238 74,231 63,219
+       L 48,197
+       C 41,184 38,169 40,152
+       C 42,135 49,121 61,110
+       L 83,95
+       Z" />
+
+  <!-- Mesh Network Lines connecting major cities -->
+  <g id="meshLines" stroke="#F4A900" stroke-width="2.2" fill="none" opacity="0.72">
+    <!-- North African mesh -->
+    <line x1="512" y1="148" x2="472" y2="153" />  <!-- Cairo-Alexandria -->
+    <line x1="472" y1="153" x2="390" y2="162" />  <!-- Alexandria-Tunis -->
+    <line x1="390" y1="162" x2="320" y2="170" />  <!-- Tunis-Algiers -->
+    <line x1="320" y1="170" x2="245" y2="182" />  <!-- Algiers-Casablanca -->
+    <line x1="512" y1="148" x2="390" y2="162" />  <!-- Cairo-Tunis direct -->
+
+    <!-- West African corridor -->
+    <line x1="245" y1="182" x2="220" y2="275" />  <!-- Casablanca-Dakar -->
+    <line x1="220" y1="275" x2="268" y2="318" />  <!-- Dakar-Abidjan -->
+    <line x1="268" y1="318" x2="308" y2="338" />  <!-- Abidjan-Accra -->
+    <line x1="308" y1="338" x2="365" y2="353" />  <!-- Accra-Lagos -->
+
+    <!-- Trans-Sahara backbone -->
+    <line x1="320" y1="170" x2="365" y2="353" />  <!-- Algiers-Lagos -->
+
+    <!-- Central African network -->
+    <line x1="365" y1="353" x2="410" y2="438" />  <!-- Lagos-Kinshasa -->
+    <line x1="410" y1="438" x2="465" y2="408" />  <!-- Kinshasa-Kampala -->
+    <line x1="410" y1="438" x2="445" y2="545" />  <!-- Kinshasa-Harare -->
+
+    <!-- East African spine -->
+    <line x1="525" y1="270" x2="505" y2="365" />  <!-- Addis Ababa-Nairobi -->
+    <line x1="505" y1="365" x2="465" y2="408" />  <!-- Nairobi-Kampala -->
+    <line x1="505" y1="365" x2="525" y2="425" />  <!-- Nairobi-Dar es Salaam -->
+    <line x1="525" y1="270" x2="512" y2="148" />  <!-- Addis Ababa-Cairo -->
+
+    <!-- Southern African network -->
+    <line x1="525" y1="425" x2="445" y2="545" />  <!-- Dar es Salaam-Harare -->
+    <line x1="445" y1="545" x2="410" y2="638" />  <!-- Harare-Johannesburg -->
+    <line x1="410" y1="638" x2="360" y2="708" />  <!-- Johannesburg-Cape Town -->
+
+    <!-- Major cross-continental backbones -->
+    <line x1="365" y1="353" x2="505" y2="365" />  <!-- Lagos-Nairobi transcontinental -->
+    <line x1="465" y1="408" x2="445" y2="545" />  <!-- Kampala-Harare spine -->
+    <line x1="320" y1="170" x2="512" y2="148" />  <!-- Algiers-Cairo northern route -->
+  </g>
+
+  <!-- Network Nodes - 16 Major African Cities with glow effects -->
+  <g id="networkNodes">
+    <!-- North Africa -->
+    <circle cx="512" cy="148" r="11" fill="#F4A900" stroke="white" stroke-width="4.5" filter="url(#strongGlow)"/>  <!-- Cairo (MAJOR HUB) -->
+    <circle cx="472" cy="153" r="7.5" fill="#F4A900" stroke="white" stroke-width="3.2" filter="url(#glow)"/>  <!-- Alexandria -->
+    <circle cx="390" cy="162" r="8.5" fill="#F4A900" stroke="white" stroke-width="3.8" filter="url(#glow)"/>  <!-- Tunis -->
+    <circle cx="320" cy="170" r="8.5" fill="#F4A900" stroke="white" stroke-width="3.8" filter="url(#glow)"/>  <!-- Algiers -->
+    <circle cx="245" cy="182" r="8.5" fill="#F4A900" stroke="white" stroke-width="3.8" filter="url(#glow)"/>  <!-- Casablanca -->
+
+    <!-- West Africa -->
+    <circle cx="220" cy="275" r="8" fill="#F4A900" stroke="white" stroke-width="3.5" filter="url(#glow)"/>  <!-- Dakar -->
+    <circle cx="268" cy="318" r="7.5" fill="#F4A900" stroke="white" stroke-width="3.2" filter="url(#glow)"/>  <!-- Abidjan -->
+    <circle cx="308" cy="338" r="8" fill="#F4A900" stroke="white" stroke-width="3.5" filter="url(#glow)"/>  <!-- Accra -->
+    <circle cx="365" cy="353" r="12" fill="#F4A900" stroke="white" stroke-width="5" filter="url(#strongGlow)"/>  <!-- Lagos (MAJOR HUB) -->
+
+    <!-- Central Africa -->
+    <circle cx="410" cy="438" r="9.5" fill="#F4A900" stroke="white" stroke-width="4" filter="url(#glow)"/>  <!-- Kinshasa -->
+    <circle cx="465" cy="408" r="8.5" fill="#F4A900" stroke="white" stroke-width="3.8" filter="url(#glow)"/>  <!-- Kampala -->
+
+    <!-- East Africa -->
+    <circle cx="505" cy="365" r="11" fill="#F4A900" stroke="white" stroke-width="4.5" filter="url(#strongGlow)"/>  <!-- Nairobi (MAJOR HUB) -->
+    <circle cx="525" cy="270" r="8.5" fill="#F4A900" stroke="white" stroke-width="3.8" filter="url(#glow)"/>  <!-- Addis Ababa -->
+    <circle cx="525" cy="425" r="8" fill="#F4A900" stroke="white" stroke-width="3.5" filter="url(#glow)"/>  <!-- Dar es Salaam -->
+
+    <!-- Southern Africa -->
+    <circle cx="445" cy="545" r="8" fill="#F4A900" stroke="white" stroke-width="3.5" filter="url(#glow)"/>  <!-- Harare -->
+    <circle cx="410" cy="638" r="9.5" fill="#F4A900" stroke="white" stroke-width="4" filter="url(#glow)"/>  <!-- Johannesburg -->
+    <circle cx="360" cy="708" r="8.5" fill="#F4A900" stroke="white" stroke-width="3.8" filter="url(#glow)"/>  <!-- Cape Town -->
+  </g>
+</svg>
