@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFM - Africans First Mesh | Community-Owned Internet for Africa</title>
+    <meta name="description" content="Join the waitlist for AFM's presale. Build Africa's first community-owned WiFi network with up to 50% bonus rewards. Limited Early Bird spots available.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌍</span>
+                <span class="logo-text">AFM</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#presale">Presale</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#operators">Become an Operator</a></li>
+                <li><a href="#whitepaper">Whitepaper</a></li>
+                <li><a href="#waitlist" class="btn btn-primary-small">Join Waitlist</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">⚡</span>
+                    <span>Early Bird Presale Opening Soon</span>
+                </div>
+                <h1 class="hero-title">
+                    Internet Access as a <span class="gradient-text">Human Right</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Join Africa's first community-owned WiFi network. Earn up to <strong>50% bonus rewards</strong> in our Early Bird presale and help connect 100,000+ people by 2027.
+                </p>
+                <div class="hero-cta">
+                    <a href="#waitlist" class="btn btn-primary btn-large">
+                        Join the Waitlist
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-large">
+                        Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">2.9B</div>
+                        <div class="stat-label">People without internet</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">50%</div>
+                        <div class="stat-label">Early Bird bonus</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">$0</div>
+                        <div class="stat-label">Entry for operators</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card floating">
+                    <div class="card-icon">📡</div>
+                    <div class="card-content">
+                        <div class="card-title">Solar-Powered</div>
+                        <div class="card-desc">Off-grid WiFi hotspots</div>
+                    </div>
+                </div>
+                <div class="hero-card floating" style="animation-delay: 0.2s;">
+                    <div class="card-icon">🤝</div>
+                    <div class="card-content">
+                        <div class="card-title">Community-Owned</div>
+                        <div class="card-desc">Democratic governance</div>
+                    </div>
+                </div>
+                <div class="hero-card floating" style="animation-delay: 0.4s;">
+                    <div class="card-icon">💰</div>
+                    <div class="card-content">
+                        <div class="card-title">Earn Income</div>
+                        <div class="card-desc">$100-200/month operators</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <p class="trust-text">Built on proven DePIN economics • Powered by Algorand • Cooperative governance</p>
+        </div>
+    </section>
+
+    <!-- Presale Section -->
+    <section id="presale" class="presale-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Early Bird Presale <span class="highlight">Limited Spots</span></h2>
+                <p class="section-subtitle">
+                    Get rewarded for believing in community-owned connectivity. Early supporters receive bonus Data Credits emitted over 24 months.
+                </p>
+            </div>
+
+            <!-- Stage Selector -->
+            <div class="stage-tabs">
+                <button class="stage-tab active" data-stage="early">
+                    <span class="stage-badge">50% Bonus</span>
+                    <span class="stage-name">Early Bird</span>
+                    <span class="stage-detail">24 months</span>
+                </button>
+                <button class="stage-tab" data-stage="mid">
+                    <span class="stage-badge">32% Bonus</span>
+                    <span class="stage-name">Mid Presale</span>
+                    <span class="stage-detail">18 months</span>
+                </button>
+                <button class="stage-tab" data-stage="late">
+                    <span class="stage-badge">15% Bonus</span>
+                    <span class="stage-name">Late Presale</span>
+                    <span class="stage-detail">12 months</span>
+                </button>
+            </div>
+
+            <!-- Tier Cards -->
+            <div class="tiers-grid" id="tiers-container">
+                <!-- Early Bird Tiers (default) -->
+                <div class="tier-card" data-tier="starter">
+                    <div class="tier-header">
+                        <h3 class="tier-name">Starter</h3>
+                        <div class="tier-price">$10</div>
+                    </div>
+                    <div class="tier-reward">
+                        <div class="reward-value">$15</div>
+                        <div class="reward-label">in Data Credits</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li>✓ 24 month emission</li>
+                        <li>✓ 0.5 GB/month cap</li>
+                        <li>✓ Soulbound (non-transferable)</li>
+                        <li>✓ Support the mission</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card" data-tier="light">
+                    <div class="tier-header">
+                        <h3 class="tier-name">Light</h3>
+                        <div class="tier-price">$100</div>
+                    </div>
+                    <div class="tier-reward">
+                        <div class="reward-value">$150</div>
+                        <div class="reward-label">in Data Credits</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li>✓ 24 month emission</li>
+                        <li>✓ 5 GB/month cap</li>
+                        <li>✓ Soulbound rewards</li>
+                        <li>✓ Community access</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card" data-tier="medium">
+                    <div class="tier-header">
+                        <h3 class="tier-name">Medium</h3>
+                        <div class="tier-price">$200</div>
+                    </div>
+                    <div class="tier-reward">
+                        <div class="reward-value">$300</div>
+                        <div class="reward-label">in Data Credits</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li>✓ 24 month emission</li>
+                        <li>✓ 10 GB/month cap</li>
+                        <li>✓ Operator bonus eligible</li>
+                        <li>✓ Priority support</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card featured" data-tier="heavy">
+                    <div class="tier-badge">Most Popular</div>
+                    <div class="tier-header">
+                        <h3 class="tier-name">Heavy+</h3>
+                        <div class="tier-price">$600</div>
+                    </div>
+                    <div class="tier-reward">
+                        <div class="reward-value">$900</div>
+                        <div class="reward-label">in Data Credits</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li>✓ 24 month emission</li>
+                        <li>✓ 30 GB/month cap</li>
+                        <li>✓ <strong>FREE operator financing</strong></li>
+                        <li>✓ 15% operator bonus ($135)</li>
+                        <li>✓ Limited to 30 spots</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="presale-cta">
+                <a href="#waitlist" class="btn btn-primary btn-large">
+                    Secure Your Spot on the Waitlist
+                </a>
+                <p class="presale-note">
+                    🔒 No payment required now. Waitlist members get first access when presale opens.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operator Opportunity -->
+    <section id="operators" class="operator-section">
+        <div class="container">
+            <div class="operator-grid">
+                <div class="operator-content">
+                    <h2 class="section-title">Become a <span class="gradient-text">Node Operator</span></h2>
+                    <p class="operator-subtitle">
+                        Turn your Heavy+ presale purchase into a profitable WiFi business. Zero upfront equipment costs for the first 30 participants.
+                    </p>
+
+                    <div class="operator-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💰</div>
+                            <div class="benefit-content">
+                                <h3>Earn $100-200/month</h3>
+                                <p>Generate passive income by providing WiFi to your community</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⚡</div>
+                            <div class="benefit-content">
+                                <h3>$0 Down Payment</h3>
+                                <p>FREE equipment financing for Heavy+ Early Bird participants</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🌍</div>
+                            <div class="benefit-content">
+                                <h3>Impact Your Community</h3>
+                                <p>Provide affordable internet access where it's needed most</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📈</div>
+                            <div class="benefit-content">
+                                <h3>1,000% ROI in 24 months</h3>
+                                <p>$250 investment → $3,000 net worth (equipment + cash)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="operator-cta">
+                        <a href="#waitlist" class="btn btn-primary">Join Operator Waitlist</a>
+                        <a href="AFM-Whitepaper-v0.4.1.md" class="btn btn-text">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="operator-visual">
+                    <div class="economics-card">
+                        <h4>Operator Economics (Month 1-12)</h4>
+                        <div class="econ-row">
+                            <span>AFM Rewards</span>
+                            <strong>$200/mo</strong>
+                        </div>
+                        <div class="econ-row highlight">
+                            <span>Your Share (40%)</span>
+                            <strong>$80/mo</strong>
+                        </div>
+                        <div class="econ-row">
+                            <span>Operating Costs</span>
+                            <strong>-$65/mo</strong>
+                        </div>
+                        <div class="econ-divider"></div>
+                        <div class="econ-row success">
+                            <span>Net Profit</span>
+                            <strong>+$15/mo</strong>
+                        </div>
+                        <div class="econ-note">
+                            ✓ Positive cash flow from day 1<br>
+                            ✓ Equipment paid off in 12.5 months<br>
+                            ✓ $135/mo profit after payback
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How AFM Works</h2>
+                <p class="section-subtitle">A cooperative WiFi network built on blockchain technology and community ownership</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Join the Presale</h3>
+                    <p>Purchase a tier and receive bonus Data Credits (DC) emitted monthly over 12-24 months. DC are used to access the network.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Network Launches</h3>
+                    <p>Operators deploy solar-powered WiFi hotspots across Africa using Starlink backhaul. You receive monthly DC emissions automatically.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Use or Operate</h3>
+                    <p>Spend DC to access WiFi, or become an operator and earn AFM tokens by providing coverage and serving data.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Community Governs</h3>
+                    <p>As a member, vote on network parameters, operator rewards, and expansion strategy. True democratic ownership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <h2 class="section-title">Our Mission</h2>
+                <blockquote class="mission-quote">
+                    "Internet access as a human right, owned by the communities it serves."
+                </blockquote>
+                <p class="mission-text">
+                    2.9 billion people globally lack internet access, with the majority in Africa. Traditional ISPs won't serve rural and peri-urban communities due to low population density. We're changing that with a cooperative model that puts communities first.
+                </p>
+                <div class="mission-stats">
+                    <div class="mission-stat">
+                        <div class="stat-value-large">500+</div>
+                        <div class="stat-label-large">Hotspots by Year 3</div>
+                    </div>
+                    <div class="mission-stat">
+                        <div class="stat-value-large">100,000+</div>
+                        <div class="stat-label-large">People Connected</div>
+                    </div>
+                    <div class="mission-stat">
+                        <div class="stat-value-large">10</div>
+                        <div class="stat-label-large">Countries</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built on Proven Technology</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">⚙️</div>
+                    <h3>Algorand Blockchain</h3>
+                    <p>Fast (3.3s finality), low-cost ($0.001/tx), carbon-negative, and built for scale.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔥</div>
+                    <h3>Burn-and-Mint Economics</h3>
+                    <p>AFM tokens burned to mint stable-priced Data Credits. Self-balancing supply and demand.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">☀️</div>
+                    <h3>Off-Grid Hardware</h3>
+                    <p>Solar-powered hotspots with satellite backhaul. Deploy anywhere, no infrastructure required.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🗳️</div>
+                    <h3>Hybrid Governance</h3>
+                    <p>One-member-one-vote for operations. Token-weighted for treasury. Balanced and fair.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Team</h2>
+                <p class="section-subtitle">Built by operators, for operators</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h3>Andrew</h3>
+                    <div class="team-role">Co-Founder, Technical Lead</div>
+                    <p class="team-bio">
+                        Smart contract architecture and tokenomics design. Building the technical foundation for community-owned infrastructure.
+                    </p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">🌍</div>
+                    <h3>Ifeanyi</h3>
+                    <div class="team-role">Co-Founder, Nigeria Operations Lead</div>
+                    <p class="team-bio">
+                        Boots on the ground in Nigeria. Building operator community, navigating regulations, and driving local partnerships.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What are Data Credits (DC)?</h3>
+                    <p>DC are non-transferable utility tokens pegged at $0.00001 each. They're used to pay for network access. Think of them like prepaid minutes for WiFi.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why are DC "soulbound" (non-transferable)?</h3>
+                    <p>This prevents speculation and ensures presale participants actually use the network. It keeps AFM focused on real utility, not trading.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I become an operator?</h3>
+                    <p>Purchase Heavy+ tier during Early Bird presale and commit to deploying a node within 12 months. First 30 spots get FREE equipment financing ($1,500 value).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if I don't use all my DC?</h3>
+                    <p>Unused DC after your emission period expires are donated to the cooperative treasury to support network growth and community programs.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>When does the network launch?</h3>
+                    <p>Network launch is planned for 4-6 months after presale closes. Exact timing depends on pilot success and operator onboarding.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I buy AFM tokens directly?</h3>
+                    <p>AFM tokens will be available after network launch. Presale participants receive DC (utility), not AFM (governance). This keeps us focused on building, not speculation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Whitepaper Section -->
+    <section id="whitepaper" class="whitepaper-section">
+        <div class="container">
+            <div class="whitepaper-content">
+                <h2 class="section-title">Read the Full Whitepaper</h2>
+                <p class="whitepaper-text">
+                    Dive deep into our tokenomics, governance roadmap, technical architecture, and 3-year plan to deploy 500+ hotspots across 10 African countries.
+                </p>
+                <a href="AFM-Whitepaper-v0.4.1.md" class="btn btn-primary" download>
+                    Download Whitepaper (v0.4.1)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist-section">
+        <div class="container">
+            <div class="waitlist-content">
+                <h2 class="section-title">Join the Waitlist</h2>
+                <p class="waitlist-subtitle">
+                    Be first in line when presale opens. Waitlist members get exclusive early access and updates on network launch.
+                </p>
+
+                <form id="waitlist-form" class="waitlist-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="interest" name="interest" required>
+                            <option value="">I'm interested in...</option>
+                            <option value="presale">Joining the presale</option>
+                            <option value="operator">Becoming an operator</option>
+                            <option value="both">Both presale and operating</option>
+                            <option value="community">Just following the project</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="tier" name="tier">
+                            <option value="">Expected tier (optional)</option>
+                            <option value="starter">Starter ($10)</option>
+                            <option value="light">Light ($100)</option>
+                            <option value="medium">Medium ($200-300)</option>
+                            <option value="heavy">Heavy+ ($600)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="country" name="country" placeholder="Country (optional)">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large btn-full">
+                        Join the Waitlist
+                    </button>
+                    <p class="form-note">
+                        🔒 We respect your privacy. No spam, just presale updates.
+                    </p>
+                </form>
+
+                <div id="form-success" class="form-success" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3>You're on the list!</h3>
+                    <p>We'll email you as soon as the presale opens. Check your inbox for confirmation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🌍</span>
+                        <span class="logo-text">AFM</span>
+                    </div>
+                    <p class="footer-tagline">Internet access as a human right</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="AFM-Whitepaper-v0.4.1.md">Whitepaper</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#presale">Presale Tiers</a></li>
+                        <li><a href="#operators">Become Operator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord (Coming Soon)</a></li>
+                        <li><a href="#">Telegram (Coming Soon)</a></li>
+                        <li><a href="#">GitHub (Coming Soon)</a></li>
+                        <li><a href="#">Twitter (Coming Soon)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AFM (Africans First Mesh). Built with ❤️ for Africa.</p>
+                <p class="footer-note">Licensed under Creative Commons Attribution-ShareAlike 4.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="sticky-cta">
+        <div class="sticky-content">
+            <div class="sticky-text">
+                <strong>Early Bird Presale</strong> - Get 50% bonus rewards
+            </div>
+            <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

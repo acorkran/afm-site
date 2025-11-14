@@ -1,0 +1,25 @@
+# Source documents (archived)
+source-docs/
+
+# Local development
+.DS_Store
+*.log
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Analytics data (stored in localStorage)
+analytics/
+
+# Temporary files
+*.tmp
+.cache/
