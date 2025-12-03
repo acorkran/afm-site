@@ -14,8 +14,8 @@ const TELEGRAM_CHAT_IDS = ['1836540625', '755215223']; // ACorkran, bunt789
 
 // Allowed origins for CORS
 const ALLOWED_ORIGINS = [
-  'https://afm.watch',
-  'https://www.afm.watch',
+  'https://afm.sh',
+  'https://www.afm.sh',
   'http://localhost:8000',
   'http://127.0.0.1:8000'
 ];
