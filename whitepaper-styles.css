@@ -98,7 +98,7 @@
 
 .whitepaper-subtitle {
     font-size: 1.5rem;
-    color: var(--gray);
+    color: #475569; /* Darker gray for better contrast */
     margin-bottom: var(--spacing-lg);
 }
 
@@ -114,6 +114,7 @@
 
 .meta-item {
     font-size: 0.875rem;
+    color: #475569; /* Ensure readable text */
 }
 
 .meta-item strong {
@@ -457,6 +458,10 @@
     font-weight: 700;
 }
 
+.tier-comparison-table td {
+    color: var(--dark); /* Ensure table cell text is readable */
+}
+
 .tier-comparison-table tr.featured-row {
     background: #fff8e6;
     border-left: 4px solid var(--accent);
@@ -485,10 +490,20 @@
 
 .info-box p {
     margin-bottom: var(--spacing-sm);
+    color: var(--dark); /* Ensure text is readable on light background */
 }
 
 .info-box p:last-child {
     margin-bottom: 0;
+}
+
+.info-box ol,
+.info-box ul {
+    color: var(--dark);
+}
+
+.info-box li {
+    color: var(--dark);
 }
 
 .warning-text {
@@ -533,6 +548,11 @@
 .equipment-tier li {
     padding: 0.25rem 0;
     font-size: 0.875rem;
+    color: var(--dark);
+}
+
+.equipment-tier p {
+    color: var(--dark);
 }
 
 /* Economics Breakdown */
@@ -543,6 +563,10 @@
     border-radius: var(--radius-lg);
 }
 
+.economics-breakdown h4 {
+    color: var(--dark);
+}
+
 .economics-table {
     width: 100%;
     margin: var(--spacing-md) 0;
@@ -551,6 +575,7 @@
 .economics-table td {
     padding: var(--spacing-sm) 0;
     border-bottom: 1px solid var(--gray-light);
+    color: var(--dark);
 }
 
 .economics-table .amount {
@@ -618,6 +643,11 @@
 
 .governance-layer h4 {
     margin-top: 0;
+    color: var(--dark);
+}
+
+.governance-layer p {
+    color: var(--dark);
 }
 
 .governance-phases {
@@ -636,6 +666,11 @@
 
 .phase h4 {
     color: var(--primary);
+}
+
+.phase ul,
+.phase li {
+    color: var(--dark);
 }
 
 /* Roadmap Timeline */
@@ -662,10 +697,15 @@
 
 .roadmap-content h4 {
     margin-top: 0;
+    color: var(--dark);
 }
 
 .roadmap-content ul {
     margin: 0;
+}
+
+.roadmap-content li {
+    color: var(--dark);
 }
 
 /* Risks Grid */
@@ -691,6 +731,7 @@
 .risk-card p {
     font-size: 0.875rem;
     margin: 0.5rem 0;
+    color: var(--dark);
 }
 
 /* Team Section */
@@ -736,6 +777,10 @@
     border-radius: var(--radius-md);
 }
 
+.advisors-note p {
+    color: var(--dark);
+}
+
 /* Attribution */
 .attribution-list {
     margin: var(--spacing-lg) 0;
@@ -757,6 +802,7 @@
 .attribution-item p {
     font-size: 0.875rem;
     margin: 0;
+    color: var(--dark);
 }
 
 /* CTA Section */
@@ -795,6 +841,16 @@
 .cta-note a {
     color: white;
     text-decoration: underline;
+}
+
+/* Fix button colors in CTA section */
+.whitepaper-cta .btn-secondary {
+    color: var(--dark) !important;
+    background: var(--white);
+}
+
+.whitepaper-cta .btn-secondary:hover {
+    color: var(--primary) !important;
 }
 
 /* Responsive */
