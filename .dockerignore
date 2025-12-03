@@ -1,0 +1,15 @@
+# Git files
+.git
+.gitignore
+
+# Claude files
+.claude
+
+# README files (keep the markdown files needed for site)
+README-GITHUB.md
+WEBSITE-README.md
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml

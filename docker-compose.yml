@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  afm-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: afm-website
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - afm-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "com.afm.service=website"
+      - "com.afm.description=AFM static website"
+
+  # Placeholder for future discord bot containers
+  # discord-bot-1:
+  #   image: discord-bot-1:latest
+  #   container_name: discord-bot-1
+  #   restart: unless-stopped
+  #   networks:
+  #     - afm-network
+  #   environment:
+  #     - DISCORD_TOKEN=${DISCORD_BOT_1_TOKEN}
+
+  # discord-bot-2:
+  #   image: discord-bot-2:latest
+  #   container_name: discord-bot-2
+  #   restart: unless-stopped
+  #   networks:
+  #     - afm-network
+  #   environment:
+  #     - DISCORD_TOKEN=${DISCORD_BOT_2_TOKEN}
+
+networks:
+  afm-network:
+    driver: bridge
+    name: afm-network
