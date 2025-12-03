@@ -1,3 +1,46 @@
+// AFM Waitlist API endpoint
+const WAITLIST_API_URL = 'https://afm-waitlist.transhumancoin.workers.dev/api/waitlist';
+
+// Disclaimer banner dismiss functionality
+const dismissBannerBtn = document.getElementById('dismiss-banner');
+const disclaimerBanner = document.getElementById('disclaimer-banner');
+
+if (dismissBannerBtn && disclaimerBanner) {
+    // Check if banner was previously dismissed
+    if (localStorage.getItem('afm-banner-dismissed') === 'true') {
+        disclaimerBanner.classList.add('dismissed');
+        document.body.classList.add('banner-dismissed');
+    }
+
+    dismissBannerBtn.addEventListener('click', () => {
+        disclaimerBanner.classList.add('dismissed');
+        document.body.classList.add('banner-dismissed');
+        localStorage.setItem('afm-banner-dismissed', 'true');
+    });
+}
+
+// Turnstile token storage
+let turnstileToken = null;
+
+// Turnstile callbacks (called by the widget)
+window.onTurnstileSuccess = function(token) {
+    turnstileToken = token;
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Join the Waitlist';
+    }
+};
+
+window.onTurnstileExpired = function() {
+    turnstileToken = null;
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Please verify you\'re human';
+    }
+};
+
 // Tier data for all stages
 const tierData = {
     early: {
@@ -71,51 +114,81 @@ const formSuccess = document.getElementById('form-success');
 waitlistForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Get form data
+    const submitBtn = document.getElementById('submit-btn');
+    const originalBtnText = submitBtn.textContent;
+
+    // Check Turnstile token
+    if (!turnstileToken) {
+        alert('Please complete the verification checkbox first.');
+        return;
+    }
+
+    // Get form data (country/region auto-detected by Cloudflare)
     const formData = {
-        name: document.getElementById('name').value,
         email: document.getElementById('email').value,
+        name: document.getElementById('name').value || null,
         telegram: document.getElementById('telegram').value,
         interest: document.getElementById('interest').value,
         tier: document.getElementById('tier').value,
-        country: document.getElementById('country').value,
-        region: document.getElementById('region').value,
-        timestamp: new Date().toISOString()
+        turnstileToken: turnstileToken
     };
 
     try {
-        // TODO: Replace with actual API endpoint when ready
-        // For now, just log to console and show success
-        console.log('Waitlist signup:', formData);
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
 
-        // Simulate API call
-        await simulateApiCall(formData);
+        // Submit to Worker API
+        const response = await fetch(WAITLIST_API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
 
-        // Show success message
-        waitlistForm.style.display = 'none';
-        formSuccess.style.display = 'block';
+        const result = await response.json();
 
-        // Optional: Send email notification (would need backend)
-        // await sendEmailNotification(formData);
+        if (result.success) {
+            // Show success message
+            waitlistForm.style.display = 'none';
+            formSuccess.style.display = 'block';
+
+            // Update success message with position if available
+            if (result.position) {
+                const successMsg = formSuccess.querySelector('p');
+                if (successMsg) {
+                    successMsg.innerHTML = `You're #${result.position} on the list! We'll email you as soon as the presale opens.`;
+                }
+            }
+
+            console.log('Waitlist signup successful:', result);
+        } else {
+            // Show error message
+            alert(result.error || 'Something went wrong. Please try again.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+
+            // Reset Turnstile on error
+            if (typeof turnstile !== 'undefined') {
+                turnstile.reset();
+            }
+            turnstileToken = null;
+        }
 
     } catch (error) {
         console.error('Form submission error:', error);
-        alert('Oops! Something went wrong. Please try again or email us directly.');
+        alert('Network error. Please check your connection and try again.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+
+        // Reset Turnstile on error
+        if (typeof turnstile !== 'undefined') {
+            turnstile.reset();
+        }
+        turnstileToken = null;
     }
 });
-
-// Simulate API call (replace with real endpoint)
-function simulateApiCall(data) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            // Store in localStorage as backup
-            const existingData = JSON.parse(localStorage.getItem('afm-waitlist') || '[]');
-            existingData.push(data);
-            localStorage.setItem('afm-waitlist', JSON.stringify(existingData));
-            resolve();
-        }, 500);
-    });
-}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

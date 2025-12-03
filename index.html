@@ -9,12 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
     <!-- Disclaimer Banner -->
-    <div class="disclaimer-banner">
-        <div class="container">
+    <div class="disclaimer-banner" id="disclaimer-banner">
+        <div class="container disclaimer-container">
             <p>⚠️ <strong>WAITLIST PHASE:</strong> Presale details subject to change. Review <a href="AFM-Whitepaper-v0.4.1.md" target="_blank">whitepaper v0.4.1</a> and <a href="terms-and-conditions.md" target="_blank">draft terms</a> before committing.</p>
+            <button class="dismiss-btn" id="dismiss-banner" aria-label="Dismiss banner">×</button>
         </div>
     </div>
 
@@ -110,197 +113,6 @@
     <section class="trust-section">
         <div class="container">
             <p class="trust-text">Built on proven DePIN economics • Powered by Algorand • Cooperative governance</p>
-        </div>
-    </section>
-
-    <!-- Presale Section -->
-    <section id="presale" class="presale-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Presale Tiers <span class="highlight">Time-Gated Rewards</span></h2>
-                <p class="section-subtitle">
-                    Rewards decrease over time as the network grows. Early supporters earn higher bonuses for taking on early risk.
-                </p>
-            </div>
-
-            <!-- Presale Preview Banner -->
-            <div class="current-stage-banner">
-                <div class="stage-info">
-                    <div class="stage-status">
-                        <span class="status-badge">COMING SOON</span>
-                        <span class="stage-name">Early Bird Stage Preview</span>
-                    </div>
-                    <div class="stage-bonus">50% Bonus • 24 Month Emission</div>
-                </div>
-                <div class="stage-timeline">
-                    <p><strong>Join the waitlist below to be notified when presale opens</strong></p>
-                    <p class="timeline-note">Stage 2: Mid Presale (32% bonus) • Stage 3: Late Presale (15% bonus)</p>
-                    <p class="timeline-note">Rewards decrease over time - early supporters earn more</p>
-                </div>
-            </div>
-
-            <!-- Tier Cards -->
-            <div class="tiers-grid" id="tiers-container">
-                <!-- Early Bird Tiers (default) -->
-                <div class="tier-card" data-tier="starter">
-                    <div class="tier-badge network-trial">Quick Entry</div>
-                    <div class="tier-header">
-                        <h3 class="tier-name">Starter</h3>
-                        <div class="tier-price">$10</div>
-                    </div>
-                    <div class="tier-reward">
-                        <div class="reward-value">$15</div>
-                        <div class="reward-label">in Data Credits (one-time)</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li>✓ One-time credit (no emission)</li>
-                        <li>✓ ~1 month light/medium usage</li>
-                        <li>✓ Soulbound (non-transferable)</li>
-                        <li>✓ Try the network</li>
-                    </ul>
-                </div>
-
-                <div class="tier-card" data-tier="light">
-                    <div class="tier-header">
-                        <h3 class="tier-name">Light</h3>
-                        <div class="tier-price">$100</div>
-                    </div>
-                    <div class="tier-reward">
-                        <div class="reward-value">$150</div>
-                        <div class="reward-label">in Data Credits</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li>✓ 24 month emission</li>
-                        <li>✓ 5 GB/month cap</li>
-                        <li>✓ Mobile-first usage</li>
-                        <li>✓ Community access</li>
-                    </ul>
-                </div>
-
-                <div class="tier-card" data-tier="medium">
-                    <div class="tier-header">
-                        <h3 class="tier-name">Medium</h3>
-                        <div class="tier-price">$200</div>
-                    </div>
-                    <div class="tier-reward">
-                        <div class="reward-value">$300</div>
-                        <div class="reward-label">in Data Credits</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li>✓ 24 month emission</li>
-                        <li>✓ 10 GB/month cap</li>
-                        <li>✓ Household internet</li>
-                        <li>✓ Operator bonus eligible</li>
-                    </ul>
-                </div>
-
-                <div class="tier-card featured" data-tier="heavy">
-                    <div class="tier-badge">Most Popular</div>
-                    <div class="tier-header">
-                        <h3 class="tier-name">Heavy+</h3>
-                        <div class="tier-price">$600</div>
-                    </div>
-                    <div class="tier-reward">
-                        <div class="reward-value">$900</div>
-                        <div class="reward-label">in Data Credits</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li>✓ 24 month emission</li>
-                        <li>✓ 30 GB/month cap</li>
-                        <li>✓ <strong>FREE operator financing*</strong></li>
-                        <li>✓ 15% operator bonus ($135)</li>
-                        <li>✓ Operator pathway</li>
-                    </ul>
-                    <p class="tier-note">*Limited to first 30 Early Bird operators</p>
-                </div>
-            </div>
-
-            <div class="presale-cta">
-                <a href="#waitlist" class="btn btn-primary btn-large">
-                    Join the Waitlist
-                </a>
-                <p class="presale-note">
-                    🔒 No payment required now. Review full <a href="AFM-Whitepaper-v0.4.1.md" target="_blank">whitepaper</a> and <a href="terms-and-conditions.md" target="_blank">terms & conditions</a> before committing.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Operator Opportunity -->
-    <section id="operators" class="operator-section">
-        <div class="container">
-            <div class="operator-grid">
-                <div class="operator-content">
-                    <h2 class="section-title">Become a <span class="gradient-text">Node Operator</span></h2>
-                    <p class="operator-subtitle">
-                        Turn your Heavy+ presale purchase into a profitable WiFi business. Zero upfront equipment costs for the first 30 participants.
-                    </p>
-
-                    <div class="operator-benefits">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">💰</div>
-                            <div class="benefit-content">
-                                <h3>Earn $100-200/month</h3>
-                                <p>Generate passive income by providing WiFi to your community</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">⚡</div>
-                            <div class="benefit-content">
-                                <h3>$0 Down Payment</h3>
-                                <p>FREE equipment financing for Heavy+ Early Bird participants</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">🌍</div>
-                            <div class="benefit-content">
-                                <h3>Impact Your Community</h3>
-                                <p>Provide affordable internet access where it's needed most</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">📈</div>
-                            <div class="benefit-content">
-                                <h3>1,000% ROI in 24 months</h3>
-                                <p>$250 investment → $3,000 net worth (equipment + cash)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="operator-cta">
-                        <a href="#waitlist" class="btn btn-primary">Join Operator Waitlist</a>
-                        <a href="AFM-Whitepaper-v0.4.1.md" class="btn btn-text">Learn More →</a>
-                    </div>
-                </div>
-
-                <div class="operator-visual">
-                    <div class="economics-card">
-                        <h4>Operator Economics (Month 1-12)</h4>
-                        <div class="econ-row">
-                            <span>AFM Rewards</span>
-                            <strong>$200/mo</strong>
-                        </div>
-                        <div class="econ-row highlight">
-                            <span>Your Share (40%)</span>
-                            <strong>$80/mo</strong>
-                        </div>
-                        <div class="econ-row">
-                            <span>Operating Costs</span>
-                            <strong>-$65/mo</strong>
-                        </div>
-                        <div class="econ-divider"></div>
-                        <div class="econ-row success">
-                            <span>Net Profit</span>
-                            <strong>+$15/mo</strong>
-                        </div>
-                        <div class="econ-note">
-                            ✓ Positive cash flow from day 1<br>
-                            ✓ Equipment paid off in 12.5 months<br>
-                            ✓ $135/mo profit after payback
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -491,13 +303,13 @@
 
                 <form id="waitlist-form" class="waitlist-form">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
                         <input type="email" id="email" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="telegram" name="telegram" placeholder="Telegram Username (optional - for instant updates)">
+                        <input type="text" id="name" name="name" placeholder="Your Name (optional)">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="telegram" name="telegram" placeholder="Telegram Username (optional)">
                     </div>
                     <div class="form-group">
                         <select id="interest" name="interest" required>
@@ -517,25 +329,11 @@
                             <option value="heavy">Heavy+ ($600)</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="country" name="country" placeholder="Country (optional)" list="countries">
-                        <datalist id="countries">
-                            <option value="Nigeria">
-                            <option value="Kenya">
-                            <option value="Ghana">
-                            <option value="South Africa">
-                            <option value="Ethiopia">
-                            <option value="Tanzania">
-                            <option value="Uganda">
-                            <option value="Algeria">
-                            <option value="Morocco">
-                            <option value="Egypt">
-                        </datalist>
+                    <!-- Cloudflare Turnstile widget -->
+                    <div class="form-group turnstile-container">
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACEjBZLpd0-3nQJE" data-theme="dark" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired"></div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="region" name="region" placeholder="City/Region (optional - helps us find test sites)">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-large btn-full">
+                    <button type="submit" class="btn btn-primary btn-large btn-full" id="submit-btn" disabled>
                         Join the Waitlist
                     </button>
                     <p class="form-note">
@@ -547,6 +345,197 @@
                     <div class="success-icon">✓</div>
                     <h3>You're on the list!</h3>
                     <p>We'll email you as soon as the presale opens. Check your inbox for confirmation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presale Section -->
+    <section id="presale" class="presale-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Presale Tiers <span class="highlight">Time-Gated Rewards</span></h2>
+                <p class="section-subtitle">
+                    Rewards decrease over time as the network grows. Early supporters earn higher bonuses for taking on early risk.
+                </p>
+            </div>
+
+            <!-- Presale Preview Banner -->
+            <div class="current-stage-banner">
+                <div class="stage-info">
+                    <div class="stage-status">
+                        <span class="status-badge">COMING SOON</span>
+                        <span class="stage-name">Early Bird Stage Preview</span>
+                    </div>
+                    <div class="stage-bonus">50% Bonus • 24 Month Emission</div>
+                </div>
+                <div class="stage-timeline">
+                    <p><strong>Join the waitlist above to be notified when presale opens</strong></p>
+                    <p class="timeline-note">Stage 2: Mid Presale (32% bonus) • Stage 3: Late Presale (15% bonus)</p>
+                    <p class="timeline-note">Rewards decrease over time - early supporters earn more</p>
+                </div>
+            </div>
+
+            <!-- Tier Cards -->
+            <div class="tiers-grid" id="tiers-container">
+                <!-- Early Bird Tiers (default) -->
+                <div class="tier-card" data-tier="starter">
+                    <div class="tier-badge network-trial">Quick Entry</div>
+                    <div class="tier-header">
+                        <h3 class="tier-name">Starter</h3>
+                        <div class="tier-price">$10</div>
+                    </div>
+                    <div class="tier-reward">
+                        <div class="reward-value">$15</div>
+                        <div class="reward-label">in Data Credits (one-time)</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li>✓ One-time credit (no emission)</li>
+                        <li>✓ ~1 month light/medium usage</li>
+                        <li>✓ Soulbound (non-transferable)</li>
+                        <li>✓ Try the network</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card" data-tier="light">
+                    <div class="tier-header">
+                        <h3 class="tier-name">Light</h3>
+                        <div class="tier-price">$100</div>
+                    </div>
+                    <div class="tier-reward">
+                        <div class="reward-value">$150</div>
+                        <div class="reward-label">in Data Credits</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li>✓ 24 month emission</li>
+                        <li>✓ 5 GB/month cap</li>
+                        <li>✓ Mobile-first usage</li>
+                        <li>✓ Community access</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card" data-tier="medium">
+                    <div class="tier-header">
+                        <h3 class="tier-name">Medium</h3>
+                        <div class="tier-price">$200</div>
+                    </div>
+                    <div class="tier-reward">
+                        <div class="reward-value">$300</div>
+                        <div class="reward-label">in Data Credits</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li>✓ 24 month emission</li>
+                        <li>✓ 10 GB/month cap</li>
+                        <li>✓ Household internet</li>
+                        <li>✓ Operator bonus eligible</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card featured" data-tier="heavy">
+                    <div class="tier-badge">Most Popular</div>
+                    <div class="tier-header">
+                        <h3 class="tier-name">Heavy+</h3>
+                        <div class="tier-price">$600</div>
+                    </div>
+                    <div class="tier-reward">
+                        <div class="reward-value">$900</div>
+                        <div class="reward-label">in Data Credits</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li>✓ 24 month emission</li>
+                        <li>✓ 30 GB/month cap</li>
+                        <li>✓ <strong>FREE operator financing*</strong></li>
+                        <li>✓ 15% operator bonus ($135)</li>
+                        <li>✓ Operator pathway</li>
+                    </ul>
+                    <p class="tier-note">*Limited to first 30 Early Bird operators</p>
+                </div>
+            </div>
+
+            <div class="presale-cta">
+                <a href="#waitlist" class="btn btn-primary btn-large">
+                    Back to Waitlist
+                </a>
+                <p class="presale-note">
+                    🔒 No payment required now. Review full <a href="AFM-Whitepaper-v0.4.1.md" target="_blank">whitepaper</a> and <a href="terms-and-conditions.md" target="_blank">terms & conditions</a> before committing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operator Opportunity -->
+    <section id="operators" class="operator-section">
+        <div class="container">
+            <div class="operator-grid">
+                <div class="operator-content">
+                    <h2 class="section-title">Become a <span class="gradient-text">Node Operator</span></h2>
+                    <p class="operator-subtitle">
+                        Turn your Heavy+ presale purchase into a profitable WiFi business. Zero upfront equipment costs for the first 30 participants.
+                    </p>
+
+                    <div class="operator-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💰</div>
+                            <div class="benefit-content">
+                                <h3>Earn $100-200/month</h3>
+                                <p>Generate passive income by providing WiFi to your community</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⚡</div>
+                            <div class="benefit-content">
+                                <h3>$0 Down Payment</h3>
+                                <p>FREE equipment financing for Heavy+ Early Bird participants</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🌍</div>
+                            <div class="benefit-content">
+                                <h3>Impact Your Community</h3>
+                                <p>Provide affordable internet access where it's needed most</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📈</div>
+                            <div class="benefit-content">
+                                <h3>1,000% ROI in 24 months</h3>
+                                <p>$250 investment → $3,000 net worth (equipment + cash)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="operator-cta">
+                        <a href="#waitlist" class="btn btn-primary">Join Operator Waitlist</a>
+                        <a href="AFM-Whitepaper-v0.4.1.md" class="btn btn-text">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="operator-visual">
+                    <div class="economics-card">
+                        <h4>Operator Economics (Month 1-12)</h4>
+                        <div class="econ-row">
+                            <span>AFM Rewards</span>
+                            <strong>$200/mo</strong>
+                        </div>
+                        <div class="econ-row highlight">
+                            <span>Your Share (40%)</span>
+                            <strong>$80/mo</strong>
+                        </div>
+                        <div class="econ-row">
+                            <span>Operating Costs</span>
+                            <strong>-$65/mo</strong>
+                        </div>
+                        <div class="econ-divider"></div>
+                        <div class="econ-row success">
+                            <span>Net Profit</span>
+                            <strong>+$15/mo</strong>
+                        </div>
+                        <div class="econ-note">
+                            ✓ Positive cash flow from day 1<br>
+                            ✓ Equipment paid off in 12.5 months<br>
+                            ✓ $135/mo profit after payback
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

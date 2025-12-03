@@ -14,9 +14,10 @@
 </head>
 <body class="whitepaper-body">
     <!-- Disclaimer Banner -->
-    <div class="disclaimer-banner">
-        <div class="container">
+    <div class="disclaimer-banner" id="disclaimer-banner">
+        <div class="container disclaimer-container">
             <p>⚠️ <strong>DRAFT v0.4.1:</strong> This whitepaper is subject to change. <a href="index.html">Back to home</a></p>
+            <button class="dismiss-btn" id="dismiss-banner" aria-label="Dismiss banner">×</button>
         </div>
     </div>
 
@@ -31,8 +32,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#presale">Presale</a></li>
-                <li><a href="index.html#waitlist">Waitlist</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#operators">Become an Operator</a></li>
+                <li><a href="index.html#waitlist" class="btn btn-primary-small">Join Waitlist</a></li>
             </ul>
         </div>
     </nav>
@@ -660,5 +662,7 @@
 
     <!-- Charts JavaScript -->
     <script src="whitepaper-charts.js"></script>
+    <!-- Main site JS (for banner dismiss, etc.) -->
+    <script src="script.js"></script>
 </body>
 </html>

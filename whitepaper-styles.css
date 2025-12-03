@@ -51,7 +51,7 @@
 .toc-link {
     padding: 0.5rem;
     border-radius: var(--radius-md);
-    color: var(--gray);
+    color: #475569; /* Darker gray for better contrast */
     text-decoration: none;
     font-size: 0.875rem;
     transition: all 0.2s;
@@ -269,7 +269,7 @@
 
 .innovation-card p {
     font-size: 0.875rem;
-    color: var(--gray);
+    color: #475569; /* Darker gray for better contrast */
     margin: 0;
 }
 
@@ -347,7 +347,7 @@
 
 .principle-card p {
     font-size: 0.875rem;
-    color: var(--gray);
+    color: #475569; /* Darker gray for better contrast */
     margin: 0;
 }
 
@@ -411,7 +411,7 @@
 
 .stage-period {
     font-size: 0.875rem;
-    color: var(--gray);
+    color: #475569; /* Darker gray for better contrast */
     margin-bottom: var(--spacing-md);
 }
 
@@ -429,7 +429,7 @@
 
 .stage-status.locked {
     background: var(--gray-lighter);
-    color: var(--gray);
+    color: #475569; /* Darker gray for better contrast */
 }
 
 /* Tables */
@@ -464,7 +464,7 @@
 
 .table-note {
     font-size: 0.75rem;
-    color: var(--gray);
+    color: #475569; /* Darker gray for better contrast */
     font-style: italic;
     margin-top: var(--spacing-sm);
 }
@@ -726,7 +726,7 @@
 
 .member-bio {
     font-size: 0.875rem;
-    color: var(--gray);
+    color: #475569; /* Darker gray for better contrast */
 }
 
 .advisors-note {

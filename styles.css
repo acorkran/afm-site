@@ -62,6 +62,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-top: 44px; /* Account for fixed disclaimer banner */
 }
 
 .container {
@@ -72,10 +73,29 @@ body {
 
 /* Disclaimer Banner */
 .disclaimer-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
     background: #fff3cd;
     border-bottom: 2px solid #ffc107;
     padding: var(--spacing-sm) 0;
     text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.disclaimer-banner.dismissed {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.disclaimer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .disclaimer-banner p {
@@ -92,6 +112,32 @@ body {
 
 .disclaimer-banner a:hover {
     color: #000;
+}
+
+.dismiss-btn {
+    background: transparent;
+    border: none;
+    color: #856404;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.dismiss-btn:hover {
+    opacity: 1;
+}
+
+/* Body padding adjustment when banner is dismissed */
+body.banner-dismissed {
+    padding-top: 0 !important;
+}
+
+/* Adjust nav position when banner is dismissed */
+body.banner-dismissed .nav {
+    top: 0;
 }
 
 /* Navigation */
@@ -142,6 +188,15 @@ body {
 
 .nav-links a:hover {
     color: var(--primary);
+}
+
+/* Override for button links in nav */
+.nav-links a.btn-primary-small {
+    color: var(--white) !important;
+}
+
+.nav-links a.btn-primary-small:hover {
+    color: var(--white) !important;
 }
 
 .mobile-menu-toggle {
@@ -1023,6 +1078,29 @@ section {
 
 .form-success p {
     color: var(--gray);
+}
+
+/* Turnstile Widget */
+.turnstile-container {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-md) 0;
+}
+
+.cf-turnstile {
+    margin: 0 auto;
+}
+
+/* Disabled Button State */
+.btn:disabled,
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#submit-btn:disabled {
+    background: var(--gray);
 }
 
 /* Footer */

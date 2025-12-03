@@ -1,0 +1,25 @@
+name = "afm-waitlist"
+main = "waitlist-worker.js"
+compatibility_date = "2024-01-01"
+
+# KV Namespace - you'll need to create this and add the ID
+# Run: wrangler kv:namespace create "AFM_WAITLIST"
+# Then add the ID below
+kv_namespaces = [
+  { binding = "AFM_WAITLIST", id = "b851cbf4faaf42e9b4066c029fd7ee6f" }
+]
+
+# Environment variables (set these via Cloudflare dashboard or wrangler secret)
+# TURNSTILE_SECRET_KEY is hardcoded in worker for now, move to env var for production
+# ADMIN_KEY - set this for admin API access
+
+[vars]
+ADMIN_KEY = "38845113fb3f7725cfcdce562e15d631eefd55d77ccdd787b58446c46ba6add1"
+
+# Routes - uncomment and modify when ready to deploy to custom domain
+# routes = [
+#   { pattern = "api.afm.watch/*", zone_name = "afm.watch" }
+# ]
+
+# Or use workers.dev subdomain (default)
+# Your worker will be available at: afm-waitlist.<your-subdomain>.workers.dev
