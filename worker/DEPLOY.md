@@ -105,6 +105,11 @@ curl -H "Authorization: Bearer YOUR_ADMIN_KEY" \
   -o waitlist.csv
 ```
 
+## Changelog
+
+### 2025-12-11
+- **Fixed**: Telegram notifications now use `ctx.waitUntil()` to ensure they complete before the worker terminates. Previously, notifications were "fire and forget" which caused them to be dropped when the worker terminated after sending the HTTP response.
+
 ## Troubleshooting
 
 ### CORS Errors

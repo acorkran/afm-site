@@ -189,7 +189,7 @@ function escapeHtml(text) {
 }
 
 // Handle waitlist signup
-async function handleSignup(request, env) {
+async function handleSignup(request, env, ctx) {
   const corsHeaders = getCorsHeaders(request);
 
   try {
@@ -286,8 +286,8 @@ async function handleSignup(request, env) {
     // Get weekly activity for chart
     const weeklyActivity = await getWeeklyActivity(env);
 
-    // Send Telegram notification (don't await - fire and forget)
-    sendTelegramNotification(signup, newCount, weeklyActivity);
+    // Send Telegram notification - use waitUntil to ensure it completes
+    ctx.waitUntil(sendTelegramNotification(signup, newCount, weeklyActivity));
 
     return new Response(JSON.stringify({
       success: true,
@@ -454,7 +454,7 @@ export default {
     // Route requests
     if (url.pathname === '/api/waitlist' || url.pathname === '/api/waitlist/') {
       if (request.method === 'POST') {
-        return handleSignup(request, env);
+        return handleSignup(request, env, ctx);
       }
       if (request.method === 'GET') {
         return getStats(request, env);
